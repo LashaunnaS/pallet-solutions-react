@@ -6,36 +6,60 @@ export const About = styled.section `
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-areas: ". . ."
+                       ". img ."
+                       "title title title"
+                       ". desc .";
+  grid-template-columns: 17% 1fr 17%;
+  grid-template-rows: 15% 50% 10% 25%;
+
+ @media(max-width: 989px) {
+  height: 80vh;
+ }
+  @media(max-width: 981px) {
+  grid-template-columns: 5% 1fr 5%;
+  grid-template-rows: 10% 50% 15% 25% ;
+}
+@media(max-width: 666px) {
+  grid-template-columns: 5% 1fr 5%;
+  grid-template-rows: 10% 40% 15% 25% ;
+}
+
+@media(max-width: 455px) {
+  grid-template-rows: 10% 20% 15% 45% ;
+}
+
 `
 export const WoodStack = styled.div `
-grid-column: 3/11;
-grid-row: 2/5;
-display: flex;
-justify-content: center;
-align-content: center;
+  grid-area: img;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 `
 export const Img = styled.img `
-  height: 80%;
+  height: 100%;
   width: 100%;
+
+  @media(max-width: 455px) {
+    /* height: 90%; */
+  }
 `
 export const HeadLine = styled.h2 `
-  grid-column: 5/9 ;
-  grid-row: 4;
-  display: flex;
-  align-self: center;
-  justify-self: center;
-  color: rgb(68, 63, 63);
-  font-size: 42px;
-  padding-top: 2em;
+   grid-area: title;
+   display: flex;
+   justify-content: center;
+   color: rgb(68, 63, 63);
+   font-size: 42px;
+
+   @media(max-width: 981px) {
+  padding-top: 0;
+}
 `
 
 export const Description = styled.div `
-grid-column: 2/12;
-grid-row: 5/6;
-display: flex;
-align-self: flex-end;
-text-align: center;
-color: #252525;
+  grid-area: desc;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #252525;
 `
