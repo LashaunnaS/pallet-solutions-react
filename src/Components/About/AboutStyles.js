@@ -6,36 +6,36 @@ export const About = styled.section `
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-columns: 11vw 5vw 1fr 1fr 5vw 11vw;
-  grid-template-rows: 20vh auto 25vh 25vh;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(6, 1fr);
 `
 export const WoodStack = styled.div `
-grid-column: 3/5;
-grid-row: 2/3;
+grid-column: 3/11;
+grid-row: 2/5;
 display: flex;
 justify-content: center;
 align-content: center;
 `
 export const Img = styled.img `
-  height: 100%;
+  height: 80%;
   width: 100%;
 `
 export const HeadLine = styled.h2 `
-  grid-column: 3;
-  grid-row: 2;
+  grid-column: 5/9 ;
+  grid-row: 4;
   display: flex;
-  align-self: flex-end;
+  align-self: center;
   justify-self: center;
   color: rgb(68, 63, 63);
   font-size: 42px;
-  margin: 0px;
+  padding-top: 2em;
 `
 
-// export const Paragraph = styled.p`
-// grid-column: 2/5;
-// grid-row: 3;
-// display: flex;
-// align-self: center;
-// justify-self: center;
-// text-align: center;
-// `
+export const Description = styled.div `
+grid-column: 2/12;
+grid-row: 5/6;
+display: flex;
+align-self: flex-end;
+text-align: center;
+color: #252525;
+`
