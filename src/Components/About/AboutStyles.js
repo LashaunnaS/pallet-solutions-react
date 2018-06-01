@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-// import woodStack from './img/woodstack.jpg';
 
-export const About = styled.section `
+
+export const About = styled.section`
   background: rgb(243, 243, 241);
   width: 100vw;
   height: 100vh;
@@ -28,23 +28,21 @@ export const About = styled.section `
 @media(max-width: 455px) {
   grid-template-rows: 10% 20% 15% 45% ;
 }
+`;
 
-`
-export const WoodStack = styled.div `
+export const WoodStack = styled.div`
   grid-area: img;
   display: flex;
   justify-content: center;
   align-content: center;
-`
-export const Img = styled.img `
+`;
+
+export const Img = styled.img`
   height: 100%;
   width: 100%;
+`;
 
-  @media(max-width: 455px) {
-    /* height: 90%; */
-  }
-`
-export const HeadLine = styled.h2 `
+export const HeadLine = styled.h2`
    grid-area: title;
    display: flex;
    justify-content: center;
@@ -54,12 +52,12 @@ export const HeadLine = styled.h2 `
    @media(max-width: 981px) {
   padding-top: 0;
 }
-`
+`;
 
-export const Description = styled.div `
+export const Description = styled.div`
   grid-area: desc;
   display: flex;
   justify-content: center;
   text-align: center;
   color: #252525;
-`
+`;
