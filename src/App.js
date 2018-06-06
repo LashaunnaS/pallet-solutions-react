@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import HomePage from './Components/Home/HomePage';
 import AboutPage from './Components/About/AboutPage';
 import ServicePage from './Components/Services/ServicesPage';
+import { Main } from "./AppStyle";
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <Main>
         <HomePage />
         <AboutPage />
         <ServicePage />
-      </div>
+      </Main>
     );
   }
 }

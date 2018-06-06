@@ -10,24 +10,23 @@ export const About = styled.section `
                        "title title title"
                        ". desc .";
   grid-template-columns: 17% 1fr 17%;
-  grid-template-rows:  55% 15% 50%;
-
-  @media(max-width: 989px) {
-  height: 80vh;
- }
+  grid-template-rows:  55% 15% 30%;
 
   @media(max-width: 981px) {
   grid-template-columns: 5% 1fr 5%;
-  grid-template-rows: 60% 15% 25% ;
+  grid-template-rows: 50% 15% 35% ;
+  height: 110vh;
 }
 
 @media(max-width: 666px) {
+  height: 110vh;
   grid-template-columns: 5% 1fr 5%;
-  grid-template-rows: 50% 20% 30% ;
+  grid-template-rows: 50% 10% 40% ;
 }
 
  @media(max-width: 455px) {
-  grid-template-rows: 40% 20% 40% ;
+  height: 110vh;
+  grid-template-rows: 40% 15% 45% ;
 } 
 `;
 
@@ -62,4 +61,7 @@ export const Description = styled.div `
   justify-content: center;
   text-align: center;
   color: #252525;
+  font-size: 20px;
+
+  @media(max-width: 455px) {font-size:18px;}
 `;
