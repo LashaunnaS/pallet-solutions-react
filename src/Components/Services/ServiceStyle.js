@@ -3,14 +3,15 @@ import styled from 'styled-components';
 export const Service = styled.section `
     background-color: #3e4249;
     width: 100vw;
-    height: 140vh;
+    height: 115vh;
     display: grid;
     grid-template-areas: ". . img . ."
                        ". title title title ."
                        ". desc desc desc ."
                        ". service1 service2 service3 .";
     grid-template-columns: 12% 23% 1fr 23% 12%;
-    grid-template-rows: 40% 12% 12% 36%;
+    grid-template-rows: 35% 12% 12% 41%;
+
 
     @media(max-width: 1047px){
         height: 140vh;
@@ -71,17 +72,17 @@ export const SubHead = styled.p `
 
 export const Serv1 = styled.div`
     grid-area: service1;
-    margin: 3em 1em;
+    margin: 1em 1em;
 `;
 
 export const Serv2 = styled.div`
     grid-area: service2;
-    margin: 3em 1em;
+    margin: 1em 1em;
 `;
 
 export const Serv3 = styled.div`
     grid-area: service3;
-    margin: 3em 1em;
+    margin: 1em 1em;
 `;
 
 export const Icon = styled.div`

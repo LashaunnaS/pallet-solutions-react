@@ -4,13 +4,13 @@ import styled from 'styled-components';
 export const About = styled.section `
   background: rgb(243, 243, 241);
   width: 100vw;
-  height: 100vh;
+  height: 130vh;
   display: grid;
   grid-template-areas: ". img ."
                        "title title title"
                        ". desc .";
   grid-template-columns: 17% 1fr 17%;
-  grid-template-rows:  55% 15% 30%;
+  grid-template-rows:  55% 15% 60%;
 
   @media(max-width: 981px) {
   grid-template-columns: 5% 1fr 5%;
@@ -28,6 +28,15 @@ export const About = styled.section `
   height: 110vh;
   grid-template-rows: 40% 15% 45% ;
 } 
+
+@media(max-width: 375px) {
+  height: 120vh;
+  grid-template-rows: 40% 12% 58% ;
+} 
+
+@media(max-width: 320px) {
+  grid-template-rows: 40% 10% 59% ;
+} 
 `;
 
 export const MainImg = styled.div `
@@ -41,6 +50,11 @@ export const MainImg = styled.div `
 export const Img = styled.img `
   height: 100%;
   width: 100%;
+}
+  @media(max-width: 320px) {
+  height: 80%;
+  width: 100%;
+} 
 `;
 
 export const HeadLine = styled.h2 `
@@ -53,6 +67,11 @@ export const HeadLine = styled.h2 `
   @media(max-width: 981px) {
     padding-top: 0;
   }
+
+  @media(max-width: 320px) {
+  padding: 0px;
+} 
+  
 `;
 
 export const Description = styled.div `
