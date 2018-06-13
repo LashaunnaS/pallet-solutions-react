@@ -1,5 +1,6 @@
 import React from 'react';
 import {Contact, FormContainer, Title, Description, ContactForm} from './ContactStyles';
+import {isEmail} from 'validator';
 
 
 class ContactPage extends React.Component {
@@ -8,24 +9,24 @@ class ContactPage extends React.Component {
             name: '',
             email: '',
             phone: '',
-            message: '',
+            message: ''
         },
-        fielfErrors: {},
+        fieldErrors: {},
         people: [],
     };
     
 
     onFormSubmit = (evt) => {
-        const people = [ ...this.state.people];
+        const people = [ ...this.state.people ];
         const person = this.state.fields;
         const fieldErrors = this.validate(person);
-        this.setState({fieldErrors})
+        this.setState({fieldErrors});
         evt.preventDefault();
 
         if(Object.keys(fieldErrors).length) return;
 
         this.setState({
-            people,
+            people: people.concat(person),
             fields: {
                 name: '',
                 email: '',
@@ -36,9 +37,11 @@ class ContactPage extends React.Component {
     };
 
     validate = (person) => {
-        const error = {};
+        const errors = {};
         if (!person.name) errors.name = 'Named Required';
-        if (!person.email) erors.email = 'Email Required';
+        if (!person.email) errors.email = 'Email Required';
+        if (!person.phone) errors.phone = 'Phone nUmber Required';
+        if (!person.message) errors.message = 'Message Required';
         if (person.email && !isEmail(person.email)) errors.email = 'Invalid Email';
         return errors; 
     };
@@ -61,50 +64,46 @@ class ContactPage extends React.Component {
                 <ContactForm>
                     <form onSubmit={this.onFormSubmit}>
                         <input 
-                        // className= "formName"
                         placeholder="Your Name"
                         name='name'
                         value={this.state.fields.name}
                         onChange={this.onInputChange}
                         />
 
-                        <span style={{ color: 'red' }}>{this.state.fieldEroors.name}</span>
+                        <span style={{ color: 'red' }}>{this.state.fieldErrors.name}</span>
 
                         <br />
 
                         <input 
-                        // className= "formEmail"
                         placeholder="Your Email"
                         name='email'
                         value={this.state.fields.email}
                         onChange={this.onInputChange}
                         />
 
-                        <span style={{ color: 'red' }}>{this.state.fieldEroors.email}</span>
+                        <span style={{ color: 'red' }}>{this.state.fieldErrors.email}</span>
 
                         <br />
 
                         <input 
-                        // className= "formNumber"
                         placeholder="Your Number"
                         name='phone'
                         value={this.state.fields.phone}
                         onChange={this.onInputChange}
                         />
 
-                        <span style={{ color: 'red' }}>{this.state.fieldEroors.phoneNumber}</span>
+                        <span style={{ color: 'red' }}>{this.state.fieldErrors.phone}</span>
 
                         <br />
 
                         <textarea 
-                        // className= "formMessage"
                         placeholder="Message"
                         name='message'
                         value={this.state.fields.message}
                         onChange={this.onInputChange}
                         />
 
-                        <span style={{ color: 'red' }}>{this.state.fieldEroors.message}</span>
+                        <span style={{ color: 'red' }}>{this.state.fieldErrors.message}</span>
 
                         <br />
 
